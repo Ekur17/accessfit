@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AccessFit Poster</title>
+    <link rel="stylesheet" href="poster.css" />
+  </head>
+  <body>
+    <div class="poster-container" id="posterBox">
+      <img src="Poster.png" alt="AccessFit Poster" id="posterImage" />
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+
+    <script>
+      const posterImage = document.getElementById("posterImage");
+
+      posterImage.addEventListener("click", () => {
+        if (posterImage.requestFullscreen) {
+          posterImage.requestFullscreen();
+        } else if (posterImage.webkitRequestFullscreen) {
+          posterImage.webkitRequestFullscreen();
+        } else if (posterImage.msRequestFullscreen) {
+          posterImage.msRequestFullscreen();
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && document.fullscreenElement) {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

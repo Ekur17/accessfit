@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AccessFit | UI Designs</title>
+    <link rel="stylesheet" href="designs.css" />
+  </head>
+  <body>
+    <header>
+      <h1>AccessFit App UI Showcase</h1>
+      <p>Preview of our actual mobile interface</p>
+    </header>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+
+    <main class="gallery">
+      <div class="card">
+        <img src="Welcome.png" alt="Welcome" />
+        <p>Welcome</p>
+      </div>
+      <div class="card">
+        <img src="Sign in.jpg" alt="Sign In" />
+        <p>Sign In</p>
+      </div>
+      <div class="card">
+        <img src="Sign Up.jpg" alt="Sign Up" />
+        <p>Sign Up</p>
+      </div>
+      <div class="card">
+        <img src="QR.png" alt="QR Code" />
+        <p>QR Code</p>
+      </div>
+      <div class="card">
+        <img src="My Workout.png" alt="My Workout" />
+        <p>My Workout</p>
+      </div>
+      <div class="card">
+        <img src="Shoulders.png" alt="Shoulders" />
+        <p>Shoulders</p>
+      </div>
+      <div class="card">
+        <img src="Workout Plans.png" alt="Workout Plans" />
+        <p>Workout Plans</p>
+      </div>
+      <div class="card">
+        <img src="Profile.png" alt="Profile" />
+        <p>Profile</p>
+      </div>
+      <div class="card">
+        <img src="User Menu.png" alt="User Menu" />
+        <p>User Menu</p>
+      </div>
+      <div class="card">
+        <img src="Weekly Workout Stats .png" alt="Workout Stats" />
+        <p>Weekly Stats</p>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2025 AccessFit Team — All designs are part of the official
+        application
+      </p>
+    </footer>
+  </body>
+</html>
+<script>
+  const cards = document.querySelectorAll(".card img");
+
+  cards.forEach((img) => {
+    img.addEventListener("click", () => {
+      const overlay = document.createElement("div");
+      overlay.classList.add("fullscreen-img");
+
+      const clone = document.createElement("img");
+      clone.src = img.src;
+      clone.alt = img.alt;
+
+      overlay.appendChild(clone);
+      document.body.appendChild(overlay);
+      document.body.style.overflow = "hidden";
+
+      overlay.addEventListener("click", () => {
+        overlay.remove();
+        document.body.style.overflow = "auto";
+      });
+    });
+  });
+</script>
